@@ -1,0 +1,25 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "```bash\r npm i\r ```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo Привет!",
+    "check": "prettier --check ./src/**/*.{html,css,js}",
+    "format": "prettier --write ./src/**/*.{html,css,js}",
+    "lint": "stylelint ./src/**/*.css",
+    "lintfix": "stylelint ./src/**/*.css --fix",
+    "checkAll": "npm run check && npm run lint",
+    "fixAll": "npm run format && npm run lintfix",
+    "build": "gulp build",
+    "dev": "gulp",
+    "fixAndBuild": "npm run fixAll && npm run build",
+    "lintfixAndPush": "npm run fixAll && git add . && git commit -m 'prepare-to-publish' && git push"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^2.8.8",
+    "stylelint": "^15.4.0"
+  }
+}
